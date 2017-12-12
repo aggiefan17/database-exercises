@@ -1,10 +1,15 @@
 USE codeup_test_db;
 
 SELECT 'All albums in your table' AS 'Caption';
-SELECT name FROM albums;
+SELECT * FROM albums;
+UPDATE albums SET sales = sales * 10;
+SELECT * FROM albums;
 
 SELECT 'All albums released before 1980' AS 'Caption';
-SELECT name WHERE release_date < 1980 FROM albums;
+SELECT * FROM albums WHERE release_date < 1980;
+UPDATE albums SET release_date = release_date - 100 WHERE release_date < 1980;
 
 SELECT 'All albums by Michael Jackson' AS 'Caption';
-SELECT name WHERE artist = 'Michael Jackson' FROM albums;
+SELECT name FROM albums WHERE artist = 'Michael Jackson';
+UPDATE albums SET artist = 'Peter Jackson' WHERE artist = 'Michael Jackson';
+SELECT * FROM albums WHERE artist = 'Peter Jackson';
